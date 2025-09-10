@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Award, Users, Calendar } from 'lucide-react';
 
 export default function AuthoritySection() {
   return (
-    <section className="py-20 px-6 bg-black">
+    <section className="py-20 px-4 sm:px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         <motion.div 
-          className="bg-gray-950 rounded-2xl p-8 md:p-12 border border-gray-900 grid md:grid-cols-5 gap-8 md:gap-12 items-center"
+          className="bg-gray-950 rounded-2xl p-6 md:p-12 border border-gray-900 grid md:grid-cols-5 gap-8 md:gap-12 items-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,7 +43,7 @@ export default function AuthoritySection() {
               </h2>
             </div>
 
-            <p className="text-lg text-gray-300 leading-relaxed mb-10">
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-10">
               Porque eu de verdade não quero te enrolar, quero te mostrar o óbvio de forma bem clara, rápida, 
               sem firula e mostrando o que ninguém mostra de verdade. Eu estou há mais de 6 anos criando sites, 
               já fiz em HTML, já usei Wix, já usei WordPress, mas a IA está mudando tudo. Hoje 
@@ -68,7 +69,7 @@ export default function AuthoritySection() {
                     <stat.icon className="w-5 h-5 text-gray-400" />
                   </div>
                   <p className="text-xl font-bold text-white">{stat.number}</p>
-                  <p className="text-gray-400 text-sm">{stat.label}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

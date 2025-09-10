@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, TrendingUp, Code, Users, Target } from 'lucide-react';
@@ -27,7 +28,7 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-black relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 bg-black relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-2xl"
@@ -52,7 +53,7 @@ export default function BenefitsSection() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-8 text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-white"
             animate={{ 
               y: [0, -5, 0],
             }}
@@ -64,7 +65,7 @@ export default function BenefitsSection() {
           >
             Transformação Garantida
           </motion.h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
             Saia do curso com tudo o que precisa para começar a lucrar imediatamente
           </p>
         </motion.div>
@@ -73,7 +74,7 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-gray-950 rounded-lg p-8 border border-gray-900 hover:border-gray-800 transition-all duration-300 group"
+              className="bg-gray-950 rounded-lg p-6 sm:p-8 border border-gray-900 hover:border-gray-800 transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -99,7 +100,7 @@ export default function BenefitsSection() {
                 >
                   <benefit.icon className="w-8 h-8 text-gray-400 group-hover:text-gray-300 transition-colors duration-300" />
                 </motion.div>
-                <h3 className="text-lg font-semibold text-white leading-tight group-hover:text-gray-200 transition-colors duration-300">
+                <h3 className="text-base sm:text-lg font-semibold text-white leading-tight group-hover:text-gray-200 transition-colors duration-300">
                   {benefit.title}
                 </h3>
               </div>

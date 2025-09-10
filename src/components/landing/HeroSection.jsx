@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -5,8 +6,12 @@ import { ArrowRight, Zap, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const handleBuyClick = () => {
+    window.open('https://pay.hub.la/4zASV6jFvnVq20f0H5wn', '_blank');
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-20 bg-black overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 bg-black overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute top-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"
@@ -50,21 +55,21 @@ export default function HeroSection() {
               ease: "easeInOut"
             }}
           >
-            <Badge className="mb-8 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white border border-gray-700 font-semibold text-lg shadow-lg">
+            <Badge className="mb-8 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white border border-gray-700 font-semibold text-base sm:text-lg shadow-lg">
               🔥 TRANSFORME SUA VIDA COM IA
             </Badge>
           </motion.div>
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Você já percebeu que a IA está{' '}
+          <span className="block">Você já percebeu que</span>{' '}
           <motion.span 
-            className="text-gray-400"
+            className="text-gray-400 block"
             animate={{ 
               opacity: [0.7, 1, 0.7],
             }}
@@ -74,17 +79,22 @@ export default function HeroSection() {
               ease: "easeInOut"
             }}
           >
-            mudando tudo?
+            a IA está mudando tudo?
           </motion.span>
         </motion.h1>
 
         <motion.div 
-          className="text-xl md:text-2xl mb-12 leading-relaxed text-gray-300 max-w-3xl mx-auto space-y-6"
+          className="text-lg sm:text-xl md:text-2xl mb-12 leading-relaxed text-gray-300 max-w-3xl mx-auto space-y-6 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p>
+          <p className="block sm:hidden">
+            <span className="block">Enquanto você espera aprender programação,</span>
+            <span className="block">já tem gente criando sites em minutos e vendendo</span>
+            <span className="block">por <span className="text-white font-semibold">R$500 a R$1000 ou até mais</span>.</span>
+          </p>
+          <p className="hidden sm:block">
             Enquanto você espera aprender programação, já tem gente criando sites em minutos 
             e vendendo por{' '}
             <motion.span 
@@ -98,12 +108,11 @@ export default function HeroSection() {
                 ease: "easeInOut"
               }}
             >
-              R$897 a R$1.497
-            </motion.span>{' '}
-            ou até mais.
+              R$500 a R$1000 ou até mais
+            </motion.span>.
           </p>
           <motion.p 
-            className="text-2xl md:text-3xl font-semibold text-white"
+            className="text-xl sm:text-2xl md:text-3xl font-semibold text-white"
             animate={{ 
               y: [0, -5, 0],
             }}
@@ -118,7 +127,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -126,10 +135,12 @@ export default function HeroSection() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="w-full sm:w-auto"
           >
             <Button 
               size="lg" 
-              className="px-8 py-4 text-lg font-semibold bg-white text-black hover:bg-gray-100 border-0 transition-all duration-200 shadow-xl"
+              onClick={handleBuyClick}
+              className="px-6 sm:px-8 py-4 text-sm sm:text-lg font-semibold bg-white text-black hover:bg-gray-100 border-0 transition-all duration-200 shadow-xl w-full"
             >
               QUERO CRIAR MEU PRIMEIRO SITE EM MINUTOS
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -138,7 +149,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div 
-          className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-gray-500"
+          className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-4 text-sm text-gray-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}

@@ -1,12 +1,15 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 export default function FinalCTA() {
+  const handleBuyClick = () => {
+    window.open('https://pay.hub.la/4zASV6jFvnVq20f0H5wn', '_blank');
+  };
+
   return (
-    <section className="py-20 px-6 bg-gray-950">
+    <section className="py-20 px-4 sm:px-6 bg-gray-950">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,28 +17,28 @@ export default function FinalCTA() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 leading-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-12 leading-tight text-white">
             Você já viu que a IA está dominando.
           </h2>
           
-          <p className="text-2xl md:text-3xl font-semibold mb-16 text-gray-300">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-16 text-gray-300">
             A pergunta é: vai assistir de fora ou 
             <span className="text-white"> começar a lucrar com isso agora?</span>
           </p>
         </motion.div>
 
         <motion.div
-          className="bg-gray-900 rounded-lg p-12 border border-gray-800"
+          className="bg-gray-900 rounded-lg p-6 sm:p-12 border border-gray-800"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="mb-8">
-            <p className="text-xl text-gray-400 mb-6">
+            <p className="text-lg sm:text-xl text-gray-400 mb-6">
               Não perca mais tempo. O mercado está esperando por você.
             </p>
-            <div className="flex justify-center items-center gap-8 text-sm text-gray-500 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-sm text-gray-500 mb-8">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-gray-600 rounded-full" />
                 Sites em Minutos
@@ -49,9 +52,16 @@ export default function FinalCTA() {
 
           <Button 
             size="lg" 
-            className="px-12 py-4 text-lg font-semibold bg-white text-black hover:bg-gray-100 border-0 transition-all duration-200 w-full md:w-auto"
+            onClick={handleBuyClick}
+            className="px-8 sm:px-12 py-4 text-base sm:text-lg font-semibold bg-white text-black hover:bg-gray-100 border-0 transition-all duration-200 w-full md:w-auto"
           >
-            QUERO CRIAR MEU PRIMEIRO SITE EM MINUTOS
+            <span className="block sm:hidden">
+              <span className="block">QUERO CRIAR MEU PRIMEIRO</span>
+              <span className="block">SITE EM MINUTOS</span>
+            </span>
+            <span className="hidden sm:block">
+              QUERO CRIAR MEU PRIMEIRO SITE EM MINUTOS
+            </span>
             <ArrowRight className="ml-3 w-5 h-5" />
           </Button>
 
@@ -68,7 +78,7 @@ export default function FinalCTA() {
           viewport={{ once: true }}
         >
           <div className="mb-6 inline-block bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-            <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
+            <p className="text-gray-400 text-xs sm:text-sm flex items-center justify-center gap-2">
               <Zap className="w-4 h-4 text-yellow-400" />
               <span>Este site foi feito com IA em <strong>23 MINUTOS</strong>. Acredite, isso é poderoso.</span>
             </p>
